@@ -2,14 +2,14 @@ import React from "react";
 
 import ContactListItem from "../ContactListItem/ContactListItem";
 
-const ContactList = ({ contacts }) => (
+const ContactList = ({ contacts, onRemoveContact }) => (
   <ul className="TaskList">
     {contacts.map(({ id, name, number }) => (
       <ContactListItem
         key={id}
         name={name}
         number={number}
-        // onRemove={() => onRemoveTask(id)}
+        onRemove={() => onRemoveContact(id)}
         // onUpdate={() => onUpdateTask(id)}
       />
     ))}
