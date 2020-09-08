@@ -1,14 +1,16 @@
 import React from "react";
 
+import s from "./ContactListItem.module.css";
+
 const ContactListItem = ({ name, id, number, onRemove }) => {
   return (
-    <li key={id}>
+    <li key={id} className={s.item}>
       <span>{name}:</span>
       <span>{number}</span>
 
-      <section className="TaskList-actions">
+      <section className={s.btn}>
         <button type="button" className="TaskList-button" onClick={onRemove}>
-          Удалить
+          Delete
         </button>
       </section>
     </li>

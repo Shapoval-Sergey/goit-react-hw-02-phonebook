@@ -3,7 +3,7 @@ import React from "react";
 import ContactListItem from "../ContactListItem/ContactListItem";
 
 const ContactList = ({ contacts, onRemoveContact }) => (
-  <ul className="TaskList">
+  <ul>
     {contacts.map(({ id, name, number }) => (
       <ContactListItem
         key={id}

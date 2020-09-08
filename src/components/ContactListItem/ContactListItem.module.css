@@ -1,0 +1,10 @@
+.item {
+  display: flex;
+  flex-basis: 300px;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.item:last-child {
+  margin-bottom: 0px;
+}
