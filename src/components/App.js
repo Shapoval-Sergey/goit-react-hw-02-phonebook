@@ -42,9 +42,10 @@ export default class App extends Component {
 
   removeContact = (contactId) => {
     this.setState((prevState) => {
-      return {
+      const updateContacts = {
         contacts: prevState.contacts.filter(({ id }) => id !== contactId),
       };
+      this.setState({ contacts: updateContacts });
     });
   };
 
