@@ -9,8 +9,8 @@ const ContactListItem = ({ name, id, number, onRemove }) => {
       <p>
         {name}:{number}
       </p>
-      <section className={s.btn}>
-        <button type="button" className="TaskList-button" onClick={onRemove}>
+      <section className={s.sect__btn}>
+        <button type="button" onClick={onRemove}>
           Delete
         </button>
       </section>
