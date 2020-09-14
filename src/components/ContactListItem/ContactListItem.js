@@ -6,9 +6,8 @@ import s from "./ContactListItem.module.css";
 const ContactListItem = ({ name, id, number, onRemove }) => {
   return (
     <li key={id} className={s.item}>
-      <p>
-        {name}:{number}
-      </p>
+      <p>{name}:</p>
+      <p>{number}</p>
       <section className={s.sect__btn}>
         <button type="button" onClick={onRemove}>
           Delete
