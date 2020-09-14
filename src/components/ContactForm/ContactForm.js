@@ -42,7 +42,7 @@ export default class ContactForm extends Component {
           Number
           <input
             className={s.input}
-            type="number"
+            // type="number"
             name="number"
             value={this.state.number}
             onChange={this.handleChange}

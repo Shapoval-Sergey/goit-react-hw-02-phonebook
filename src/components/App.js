@@ -18,6 +18,21 @@ export default class App extends Component {
     filter: "",
   };
 
+  componentDidMount() {
+    const persistedContacts = localStorage.getItem("contacts");
+    if (persistedContacts) {
+      this.setState({
+        contacts: JSON.parse(persistedContacts),
+      });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.contacts !== this.state.contacts) {
+      localStorage.setItem("contacts", JSON.stringify(this.state.contacts));
+    }
+  }
+
   addContact = (name, number) => {
     const contact = {
       id: uuidv4(),
@@ -42,10 +57,9 @@ export default class App extends Component {
 
   removeContact = (contactId) => {
     this.setState((prevState) => {
-      const updateContacts = {
+      return {
         contacts: prevState.contacts.filter(({ id }) => id !== contactId),
       };
-      this.setState({ contacts: updateContacts });
     });
   };
 
